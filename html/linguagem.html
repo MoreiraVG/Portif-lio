@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfólio | Linguagens - 1° Trimestre</title>
+    <link rel="stylesheet" href="/css/linguagem.css">
+</head>
+
+<body>
+    <div class="bg-animated"></div>
+
+    <header class="top-nav">
+        <a href="../index.html" class="btn-back hover-target">
+            <span class="arrow">←</span> Voltar ao Início
+        </a>
+    </header>
+
+    <main class="container">
+        <header class="header-secao">
+            <h1 class="main-title animar-texto">Linguagens</h1>
+            <p class="subtitle animar-texto">Explorações e reflexões do 1° Trimestre</p>
+        </header>
+
+        <section class="activities-grid">
+
+            <article class="activity-card animar-card" style="--animation-order: 1;">
+                <div class="card-image">
+                    <img src="/img/game.img.png" alt="Meme sobre evolucionismo">
+                    <div class="image-overlay"></div>
+                </div>
+                <div class="card-content">
+                    <div class="card-header">
+                        <h2>Game literário</h2>
+                        <div class="tags-competencias">
+                            <span>H15</span>
+                        </div>
+                    </div>
+
+                    <p class="description">
+                        Revisão de escolas literárias do Quinhentismo ao Simbolismo via gamificação. Produção de jogos
+                        interativos no Wordwall para sistematização colaborativa de conteúdos.
+                    </p>
+
+                    <div class="card-footer">
+                        <a href="https://wordwall.net/pt/resource/108146184/obras-e-autores"
+                            class="btn-action hover-target" target="_blank">Acessar Atividade</a>
+                    </div>
+                </div>
+            </article>
+
+            <article class="activity-card animar-card" style="--animation-order: 2;">
+                <div class="card-image">
+                    <img src="/img/gh.img.png" alt="A Paixão de G.H">
+                    <div class="image-overlay"></div>
+                </div>
+                <div class="card-content">
+                    <div class="card-header">
+                        <h2>A Paixão de G.H</h2>
+                        <div class="tags-competencias">
+                            <span>H4</span><span>H22</span>
+                        </div>
+                    </div>
+
+                    <p class="description">
+                        Análise multidisciplinar de A Paixão Segundo G.H., explorando a experiência da personagem.
+                        Inclui mini aula em grupo e mapa conceitual individual.
+                    </p>
+
+                    <div class="reflexao">
+                        <h3>Reflexão Crítica</h3>
+                        <p>"Achei a atividade bastante interessante e uma ótima oportunidade de desenvolver minhas
+                            habilidades de edição e leitura."</p>
+                    </div>
+
+                    <div class="card-footer">
+                        <a href="https://canva.link/ixd30o71q4v18s8" class="btn-action hover-target"
+                            target="_blank">Acessar Atividade</a>
+                    </div>
+                </div>
+            </article>
+
+        </section>
+    </main>
+
+    <div class="cursor-personalizado"></div>
+    <div class="cursor-follower"></div>
+
+    <script src="https://unpkg.com/scrollreveal"></script>
+
+    <script>
+        // Lógica avançada do cursor
+        const cursor = document.querySelector('.cursor-personalizado');
+        const follower = document.querySelector('.cursor-follower');
+        const hoverTargets = document.querySelectorAll('.hover-target');
+
+        document.addEventListener('mousemove', (e) => {
+            cursor.style.left = e.clientX + 'px';
+            cursor.style.top = e.clientY + 'px';
+
+            // Suavidade no follower
+            setTimeout(() => {
+                follower.style.left = e.clientX + 'px';
+                follower.style.top = e.clientY + 'px';
+            }, 80);
+        });
+
+        // Aumenta o cursor ao passar nos botões
+        hoverTargets.forEach(target => {
+            target.addEventListener('mouseenter', () => {
+                cursor.classList.add('cursor-hover');
+                follower.classList.add('follower-hover');
+            });
+            target.addEventListener('mouseleave', () => {
+                cursor.classList.remove('cursor-hover');
+                follower.classList.remove('follower-hover');
+            });
+        });
+
+        // SCROLL REVEAL (Animações de entrada)
+        const sr = ScrollReveal({
+            distance: '50px',
+            duration: 1000,
+            delay: 200,
+            reset: false // Deixe 'true' se quiser que a animação repita toda vez que subir e descer a página
+        });
+
+        // As animações que você já tinha:
+        sr.reveal('.reveal-element', { origin: 'top' });
+        sr.reveal('.tilt-card', { origin: 'bottom', interval: 200 });
+
+        // SUAS NOVAS ANIMAÇÕES:
+        // Anima os textos vindo da esquerda
+        sr.reveal('.animar-texto', { origin: 'left', distance: '60px', interval: 150 });
+
+        // Anima os cards vindo de baixo, um por um (efeito cascata)
+        sr.reveal('.animar-card', { origin: 'bottom', distance: '60px', interval: 200 });
+    </script>
+</body>
+
+</html>

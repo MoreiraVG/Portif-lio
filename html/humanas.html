@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfólio | Humanas - 1° Trimestre</title>
+    <link rel="stylesheet" href="../css/humanas.css">
+</head>
+
+<body>
+    <div class="bg-animated"></div>
+
+    <header class="top-nav">
+        <a href="../index.html" class="btn-back">
+            <span class="arrow">←</span> Voltar ao Início
+        </a>
+    </header>
+
+    <main class="container">
+        <header class="header-secao">
+            <h1 class="main-title">Ciências Humanas</h1>
+            <p class="subtitle">Explorações, reflexões e análises críticas do 1° Trimestre</p>
+        </header>
+
+        <section class="activities-grid">
+
+            <article class="activity-card" style="--animation-order: 1;">
+                <div class="card-image">
+                    <img src="/img/geopolitica.img.png" alt="Geopolítica">
+                    <div class="image-overlay"></div>
+                </div>
+                <div class="card-content">
+                    <div class="card-header">
+                        <h2>Geopolítica</h2>
+                        <div class="tags-competencias">
+                            <span>C1</span><span>H1</span><span>H2</span><span>H3</span><span>H4</span><span>H5</span>
+                        </div>
+                    </div>
+                    
+                    <p class="description">
+                        Introdução à geopolítica com atividades interativas e pesquisa em duplas sobre um país, visando comparar diferentes realidades.
+                    </p>
+
+                    <div class="reflexao">
+                        <h3>Reflexão Crítica</h3>
+                        <p>"Atividade interessante que contribuiu para ampliar a compreensão sobre o mundo e desenvolver habilidades de análise e pesquisa."</p>
+                    </div>
+
+                    <div class="card-footer">
+                        <a href="https://canva.link/lqoi5ccr6ps6yxy" class="btn-action hover-target" target="_blank">Acessar Atividade</a>
+                    </div>
+                </div>
+            </article>
+
+            <article class="activity-card" style="--animation-order: 2;">
+                <div class="card-image">
+                    <img src="/img/imperalismo.img.png" alt="Imperialismo">
+                    <div class="image-overlay"></div>
+                </div>
+                <div class="card-content">
+                    <div class="card-header">
+                        <h2>Imperialismo</h2>
+                        <div class="tags-competencias">
+                            <span>C2</span><span>H8</span><span>H10</span><span>H12</span>
+                        </div>
+                    </div>
+                    
+                    <p class="description">
+                        Análise histórica da Segunda Revolução Industrial e do imperialismo, com produção visual sobre a trajetória de um país colonizado.
+                    </p>
+
+                    <div class="reflexao">
+                        <h3>Reflexão Crítica</h3>
+                        <p>"Atividade relevante que ajudou a desenvolver uma visão crítica sobre os impactos históricos e sociais da colonização."</p>
+                    </div>
+
+                    <div class="card-footer">
+                        <a href="https://docs.google.com/document/d/1hmtBQ3VFY3NNEGa1oBLgf5PrgcYK7Asb8Fqo9ngHk-k/edit?usp=sharing" class="btn-action hover-target" target="_blank">Acessar Atividade</a>
+                    </div>
+                </div>
+            </article>
+
+            <article class="activity-card" style="--animation-order: 3;">
+                <div class="card-image">
+                    <img src="/img/jornal.img.png" alt="Grande Guerra">
+                    <div class="image-overlay"></div>
+                </div>
+                <div class="card-content">
+                    <div class="card-header">
+                        <h2>Grande Guerra</h2>
+                        <div class="tags-competencias">
+                            <span>C3</span><span>H15</span><span>H16</span><span>H20</span><span>C6</span><span>H39</span>
+                        </div>
+                    </div>
+                    
+                    <p class="description">
+                        Produção de um jornal de época sobre a Primeira Guerra Mundial na França, com base em pesquisa histórica e perspectiva jornalística.
+                    </p>
+
+                    <div class="reflexao">
+                        <h3>Reflexão Crítica</h3>
+                        <p>"Atividade interessante que ajudou a desenvolver escrita autoral, análise crítica e compreensão de contextos geopolíticos históricos."</p>
+                    </div>
+
+                    <div class="card-footer">
+                        <a href="https://canva.link/93skebbv8zq63og" class="btn-action hover-target" target="_blank">Acessar Atividade</a>
+                    </div>
+                </div>
+            </article>
+
+        </section>
+    </main>
+
+    <div class="cursor-personalizado"></div>
+    <div class="cursor-follower"></div>
+
+    <script>
+        // Lógica avançada do cursor
+        const cursor = document.querySelector('.cursor-personalizado');
+        const follower = document.querySelector('.cursor-follower');
+        const hoverTargets = document.querySelectorAll('.hover-target, .btn-back');
+
+        document.addEventListener('mousemove', (e) => {
+            cursor.style.left = e.clientX + 'px';
+            cursor.style.top = e.clientY + 'px';
+            
+            // Suavidade no follower
+            setTimeout(() => {
+                follower.style.left = e.clientX + 'px';
+                follower.style.top = e.clientY + 'px';
+            }, 80);
+        });
+
+        // Aumenta o cursor ao passar nos botões
+        hoverTargets.forEach(target => {
+            target.addEventListener('mouseenter', () => {
+                cursor.classList.add('cursor-hover');
+                follower.classList.add('follower-hover');
+            });
+            target.addEventListener('mouseleave', () => {
+                cursor.classList.remove('cursor-hover');
+                follower.classList.remove('follower-hover');
+            });
+        });
+    </script>
+</body>
+</html>
