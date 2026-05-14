@@ -195,7 +195,7 @@ body {
 }
 
 .tags-competencias span {
-    background: rgba(223, 1, 57, 0.1);
+    background: #df01391a;
     border: 1px solid rgba(223, 1, 57, 0.3);
     color: #ff6b8b;
     padding: 4px 12px;

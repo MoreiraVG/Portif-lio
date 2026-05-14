@@ -6,18 +6,29 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>O Que Está No Fone - Vitor Guilherme</title>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
     <link rel="stylesheet" href="../css/musica.css">
 </head>
 
 <body>
 
+    <header class="top-nav">
+        <a href="../index.html" class="btn-back hover-target">
+            <span class="arrow">←</span> Voltar ao Portfólio
+        </a>
+    </header>
+
     <main class="spotify-container">
-        <h1 class="spotify-titulo">O Que Está No Fone</h1>
+        
+        <header class="header-musica">
+            <span class="mini-titulo-vermelho">Artistas Favoritos</span>
+            <h1 class="spotify-titulo">O Que Está No Fone</h1>
+        </header>
 
         <section class="spotify-grid">
 
-            <div class="spotify-card card-favorito">
+            <div class="spotify-card card-favorito hover-target">
                 <img src="../img/alee_img.png" alt="Artista Alee">
                 <div class="card-content">
                     <h3>ALEE</h3>
@@ -26,7 +37,7 @@
                 </div>
             </div>
 
-            <div class="spotify-card">
+            <div class="spotify-card hover-target">
                 <img src="../img/veigh_img.png" alt="Artista Veigh">
                 <div class="card-content">
                     <h3>VEIGH</h3>
@@ -35,7 +46,7 @@
                 </div>
             </div>
 
-            <div class="spotify-card">
+            <div class="spotify-card hover-target">
                 <img src="../img/bacu_img.png" alt="Artista Baco Exu do Blues">
                 <div class="card-content">
                     <h3>BACO EXU DO BLUES</h3>
@@ -44,7 +55,7 @@
                 </div>
             </div>
 
-            <div class="spotify-card">
+            <div class="spotify-card hover-target">
                 <img src="../img/ryu_img.png" alt="Artista Ryu the Runner">
                 <div class="card-content">
                     <h3>RYU THE RUNNER</h3>
@@ -54,22 +65,52 @@
             </div>
 
         </section>
-        <div class="descricao">
-            <h3>MEU SPORTIFY</h3>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam adipisci ipsum exercitationem neque
-                temporibus quo quis vitae deleniti, repellat ipsa, vero harum quae, ex officia aperiam itaque quos hic
-                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Alias odit tenetur officiis
-                quis quaerat incidunt est ipsum atque qui quas sed, omnis accusantium adipisci tempora culpa at unde
-                assumenda aliquid
-            </p>
-        </div>
 
-        <div class="container-voltar">
-            <a href="../index.html" class="btn-spotify-voltar">Voltar ao Portfólio</a>
-        </div>
+        <section class="about-music">
+            <div class="music-text">
+                <h3>A Trilha Sonora da Minha Vida</h3>
+                <p>A música sempre foi muito mais do que apenas som para mim; ela é uma ferramenta de foco, inspiração e expressão. Seja na hora de programar um código complexo, desenhar uma interface ou nos momentos de descontração com amigos, é o grave do Trap nacional e as melodias do Blues que ditam o ritmo do meu dia.</p>
+                <p>Acredito que a playlist de uma pessoa diz muito sobre a sua essência. A minha reflete uma busca constante por evolução, energia e autenticidade. O fone de ouvido é o meu passaporte para a concentração total.</p>
+            </div>
+            
+            <div class="spotify-link-box hover-target">
+                <i class="fab fa-spotify spotify-icon"></i>
+                <h4>Minha Playlist</h4>
+                <p>Quer saber o que mais rola no meu fone? Dá um play e curte a vibe junto comigo.</p>
+                <a href="COLOQUE_SEU_LINK_DO_SPOTIFY_AQUI" target="_blank" class="btn-spotify hover-target">Acessar meu Spotify</a>
+            </div>
+        </section>
 
     </main>
 
-</body>
+    <div class="cursor-personalizado"></div>
+    <div class="cursor-follower"></div>
 
+    <script>
+        const cursor = document.querySelector('.cursor-personalizado');
+        const follower = document.querySelector('.cursor-follower');
+        const hoverTargets = document.querySelectorAll('.hover-target');
+
+        document.addEventListener('mousemove', (e) => {
+            cursor.style.left = e.clientX + 'px';
+            cursor.style.top = e.clientY + 'px';
+
+            setTimeout(() => {
+                follower.style.left = e.clientX + 'px';
+                follower.style.top = e.clientY + 'px';
+            }, 80);
+        });
+
+        hoverTargets.forEach(target => {
+            target.addEventListener('mouseenter', () => {
+                cursor.classList.add('cursor-hover');
+                follower.classList.add('follower-hover');
+            });
+            target.addEventListener('mouseleave', () => {
+                cursor.classList.remove('cursor-hover');
+                follower.classList.remove('follower-hover');
+            });
+        });
+    </script>
+</body>
 </html>

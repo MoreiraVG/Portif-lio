@@ -3,12 +3,14 @@
     padding: 0;
     box-sizing: border-box;
     font-family: 'Montserrat', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+    cursor: none; /* Esconde o cursor padrão do sistema */
 }
 
 body {
     background-color: #000000; 
     color: white;
     padding: 50px 20px;
+    overflow-x: hidden;
 }
 
 .spotify-container {
@@ -17,23 +19,41 @@ body {
     text-align: center;
 }
 
-.spotify-titulo {
-    color: #df0139; 
+/* =========================================
+   TÍTULO PRINCIPAL E MINI TÍTULO
+========================================= */
+.header-musica {
     margin-bottom: 50px;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    font-size: 2.5rem;
-    font-weight: 800;
 }
 
+.mini-titulo-vermelho {
+    display: block;
+    color: #df0139; 
+    font-size: 0.85rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 4px; 
+    margin-bottom: 10px;
+}
 
+.spotify-titulo {
+    color: #ffffff; 
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 2.8rem;
+    font-weight: 800;
+    margin-bottom: 0; 
+}
+
+/* =========================================
+   CARDS SPOTIFY
+========================================= */
 .spotify-grid {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     gap: 25px;
 }
-
 
 .spotify-card {
     background-color: #121212;
@@ -42,13 +62,11 @@ body {
     width: 280px;
     border: 1px solid #df0139; 
     transition: all 0.3s ease;
-    cursor: pointer;
     text-align: left;
     position: relative;
     display: flex;
     flex-direction: column;
 }
-
 
 .spotify-card img {
     width: 100%;
@@ -58,7 +76,6 @@ body {
     margin-bottom: 15px;
     box-shadow: 0 8px 20px rgba(0,0,0,0.5);
 }
-
 
 .card-content {
     display: flex;
@@ -99,26 +116,175 @@ body {
     box-shadow: 0 0 40px rgba(223, 1, 57, 0.6); 
 }
 
-
-.container-voltar {
-    margin-top: 60px;
+/* =========================================
+   BOTÃO DE VOLTAR NO TOPO
+========================================= */
+.top-nav {
+    padding: 0 0 40px 0;
+    position: relative;
+    z-index: 100;
+    text-align: left;
+    max-width: 1300px;
+    margin: 0 auto;
 }
 
-.btn-spotify-voltar {
-    display: inline-block;
+.btn-back {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
     text-decoration: none;
+    color: #df0139;
+    font-weight: 700;
+    font-size: 0.95rem;
+    text-transform: uppercase;
+    padding: 10px 22px;
+    border: 1px solid rgba(223, 1, 57, 0.4);
+    border-radius: 50px;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.btn-back:hover {
+    background-color: #df0139;
     color: white;
-    background-color: transparent;
-    border: 2px solid #df0139;
-    padding: 12px 35px;
-    border-radius: 30px;
-    font-weight: bold;
-    font-size: 1rem;
+    box-shadow: 0 0 20px rgba(223, 1, 57, 0.5);
+    transform: translateX(-5px);
+}
+
+/* =========================================
+   SEÇÃO SOBRE A MÚSICA & SPOTIFY LADO A LADO
+========================================= */
+.about-music {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 60px;
+    margin-top: 80px;
+    text-align: left;
+    padding: 40px;
+    background: #0d0d0d;
+    border-radius: 20px;
+    border: 1px solid rgba(223, 1, 57, 0.2);
+}
+
+.music-text {
+    flex: 1.2;
+}
+
+.music-text h3 {
+    color: #df0139;
+    font-size: 2rem;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+    letter-spacing: 1px;
+}
+
+.music-text p {
+    color: #b3b3b3;
+    font-size: 1.05rem;
+    line-height: 1.7;
+    margin-bottom: 15px;
+}
+
+/* Caixa com o botão do Spotify */
+.spotify-link-box {
+    flex: 0.8;
+    background: #181818; 
+    padding: 40px 30px;
+    border-radius: 16px;
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
+    border-top: 3px solid #df0139; 
+    transition: 0.3s;
+}
+
+.spotify-link-box:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 40px #ff295e; 
+}
+
+.spotify-icon {
+    font-size: 3.5rem;
+    color: #df0139; 
+    margin-bottom: 15px;
+}
+
+.spotify-link-box h4 {
+    font-size: 1.5rem;
+    color: white;
+    margin-bottom: 10px;
+}
+
+.spotify-link-box p {
+    color: #a0a0a0;
+    font-size: 0.9rem;
+    margin-bottom: 25px;
+    line-height: 1.5;
+}
+
+/* O Botão de Acesso ao Spotify */
+.btn-spotify {
+    display: inline-block;
+    background-color: #df0139;
+    color: #000;
+    text-decoration: none;
+    font-weight: 800;
+    text-transform: uppercase;
+    padding: 14px 30px;
+    border-radius: 50px;
+    letter-spacing: 1px;
     transition: 0.3s ease;
 }
 
-.btn-spotify-voltar:hover {
-    background-color: #df0139;
-    color: white;
+.btn-spotify:hover {
+    background-color: #df0139; 
     transform: scale(1.05);
+}
+
+/* =========================================
+   SISTEMA DE CURSOR DUPLO
+========================================= */
+.cursor-personalizado {
+    position: fixed;
+    width: 8px; height: 8px;
+    background: #df0139;
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 10000;
+    transform: translate(-50%, -50%);
+    transition: width 0.2s, height 0.2s, background 0.2s;
+}
+
+.cursor-follower {
+    position: fixed;
+    width: 30px; height: 30px;
+    border: 1px solid rgba(223, 1, 57, 0.5);
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 9999;
+    transform: translate(-50%, -50%);
+    transition: width 0.3s, height 0.3s, background 0.3s, border 0.3s;
+}
+
+.cursor-hover {
+    width: 0; height: 0;
+}
+.follower-hover {
+    width: 60px; height: 60px;
+    background: rgba(223, 1, 57, 0.1);
+    border-color: #df0139;
+    backdrop-filter: blur(2px);
+}
+
+/* =========================================
+   RESPONSIVIDADE 
+========================================= */
+@media (max-width: 900px) {
+    .about-music {
+        flex-direction: column;
+        text-align: center;
+        padding: 30px 20px;
+    }
+    
+    * { cursor: auto; } /* Desativa o cursor personalizado no mobile */
+    .cursor-personalizado, .cursor-follower { display: none; }
 }
