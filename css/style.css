@@ -13,26 +13,37 @@ body {
     background-color: #06070e;
 }
 
-/* Atualização do Topo */
+/* Atualização do Topo (Preto fosco transparente e menor) */
 .topo {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
-    height: 80px;
+    height: 65px; /* Altura reduzida */
     display: flex;
-    justify-content: space-between; /* Joga a logo pra esquerda e menu pra direita */
+    justify-content: space-between;
     align-items: center;
-    padding: 0 5%; /* Espaçamento interno para não colar nas bordas */
+    padding: 0 5%;
     
-    /* Degradê para dar profundidade e detalhe */
-    background: linear-gradient(135deg, #df0139 0%, #8a0124 100%); 
-    
+    /* Fundo preto com transparência e desfoque (glassmorphism) */
+    background-color: rgba(6, 7, 14, 0.85); 
+    backdrop-filter: blur(10px); 
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
     z-index: 1000; 
 }
 
-/* Estilização da Logo */
+/* Barra de Progresso do Scroll */
+.scroll-progress {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 3px;
+    background: linear-gradient(90deg, #df0139, #ff3c6f);
+    width: 0%;
+    z-index: 1001;
+}
+
+/* Estilização da Logo (Menor e com brilho) */
 .logo-link {
     display: flex;
     align-items: center;
@@ -40,13 +51,17 @@ body {
 }
 
 .logo-img {
-    height: 60px; /* Define o tamanho pequeno como você pediu */
-    width: auto;  /* Mantém a proporção da imagem original */
-    transition: transform 0.3s ease;
+    height: 45px; /* Tamanho reduzido */
+    width: auto;  
+    transition: all 0.3s ease;
+    /* Efeito de brilho usando o vermelho do site */
+    filter: drop-shadow(0 0 8px rgba(223, 1, 57, 0.8));
 }
 
 .logo-img:hover {
-    transform: scale(1.1); /* Efeito de zoom leve ao passar o mouse */
+    transform: scale(1.05); /* Zoom mais suave */
+    /* Aumenta o brilho ao passar o mouse */
+    filter: drop-shadow(0 0 15px rgba(255, 60, 111, 1));
 }
 
 /* Ajuste do Menu para garantir que ele fique bem à direita */
@@ -57,18 +72,19 @@ body {
 .menu ul {
     display: flex;
     list-style: none;
-    gap: 30px; /* Reduzi um pouco o gap para caber melhor com a logo */
+    gap: 30px;
 }
+
 .menu a {
     text-decoration: none;
     color: #e2e2e2;
-    font-size: 1.2rem;
+    font-size: 1rem; /* Letras menores */
     position: relative;
     transition: 0.3s;
 }
 
 .menu a:hover {
-    color: #06070e;
+    color: #df0139; /* Mudado para destacar ao invés de ficar escuro */
 }
 
 .menu a::after {
@@ -76,7 +92,7 @@ body {
     position: absolute;
     width: 0%;
     height: 2px;
-    background: #06070e;
+    background: #df0139; /* Corrigido para a paleta */
     left: 0;
     bottom: -5px;
     transition: 0.3s;
@@ -89,7 +105,7 @@ body {
 .banner {
     width: 100%;
     position: sticky;
-    top: 80px; 
+    top: 65px; /* Ajustado de 80px para 65px por causa do header novo */
     z-index: -1; 
     background-color: #06070e;
     display: flex;
@@ -162,7 +178,7 @@ footer {
 }
 
 /* =========================================
-   NOVO: BOTÃO DE CURRÍCULO
+   BOTÃO DE CURRÍCULO
 ========================================= */
 .btn-curriculo {
     display: inline-block;
@@ -610,7 +626,7 @@ footer {
 }
 
 /* =========================================
-   NOVO: CARD DESTAQUE MATÉRIAS TÉCNICAS
+   CARD DESTAQUE MATÉRIAS TÉCNICAS
 ========================================= */
 .destaque-tecnico {
     width: 100%;
@@ -1059,17 +1075,17 @@ footer {
     color: #777;
     font-size: 0.9rem;
 }
+
 /* =========================================
    ESTILO: SEÇÃO EXPERIÊNCIAS (Sutil e Fora da Caixa)
 ========================================= */
 .secao-experiencias {
-    background-color: #06070e; /* Mesma cor de fundo do seu site */
+    background-color: #06070e; 
     padding: 120px 5%;
     position: relative;
     z-index: 10;
 }
 
-/* Container que segura o texto e a imagem lado a lado */
 .exp-wrapper {
     display: flex;
     align-items: center;
@@ -1079,19 +1095,17 @@ footer {
     gap: 60px;
 }
 
-/* O Quadrado de Texto */
 .exp-texto-card {
     flex: 1.2;
     background: linear-gradient(145deg, #11121c, #1a1c29);
     padding: 50px;
     border-radius: 24px;
-    border: 1px solid rgba(223, 1, 57, 0.15); /* Borda bem fraquinha e elegante */
+    border: 1px solid rgba(223, 1, 57, 0.15); 
     box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
     position: relative;
     transition: transform 0.4s ease, border-color 0.4s ease;
 }
 
-/* Animação suave ao passar o mouse apenas no card de texto */
 .exp-texto-card:hover {
     transform: translateY(-4px);
     border-color: rgba(223, 1, 57, 0.3);
@@ -1121,7 +1135,6 @@ footer {
     margin-bottom: 15px;
 }
 
-/* Botão Sutil */
 .btn-exp-premium {
     display: inline-flex;
     align-items: center;
@@ -1139,7 +1152,7 @@ footer {
 
 .btn-exp-premium:hover {
     background: #df0139;
-    box-shadow: 0 5px 15px rgba(223, 1, 57, 0.3); /* Sombra mais contida */
+    box-shadow: 0 5px 15px rgba(223, 1, 57, 0.3); 
 }
 
 .btn-exp-premium .seta {
@@ -1151,7 +1164,6 @@ footer {
     transform: translateX(6px);
 }
 
-/* --- A Imagem Fora do Quadrado --- */
 .exp-imagem-container {
     flex: 0.8;
     position: relative;
@@ -1160,7 +1172,6 @@ footer {
     align-items: center;
 }
 
-/* Brilho vermelho bem suave atrás da foto */
 .exp-img-glow {
     position: absolute;
     width: 70%;
@@ -1182,39 +1193,10 @@ footer {
     transition: transform 0.5s ease;
 }
 
-/* Movimento bem leve na foto */
 .exp-imagem-container:hover img {
     transform: translateY(-6px);
 }
 
-/* Brilho vermelho bem suave atrás da foto */
-.exp-img-glow {
-    position: absolute;
-    width: 70%;
-    height: 70%;
-    background: #df0139;
-    filter: blur(80px);
-    opacity: 0.15; 
-    z-index: 1;
-    border-radius: 50%;
-}
-
-.exp-imagem-container img {
-    position: relative;
-    z-index: 2;
-    width: 100%;
-    max-width: 380px;
-    border-radius: 20px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
-    transition: transform 0.5s ease;
-}
-
-/* Movimento bem leve na foto */
-.exp-imagem-container:hover img {
-    transform: translateY(-6px);
-}
-
-/* Responsividade para Celular */
 @media (max-width: 950px) {
     .exp-wrapper {
         flex-direction: column;
@@ -1222,7 +1204,7 @@ footer {
         gap: 40px;
     }
     .exp-imagem-container {
-        order: -1; /* Coloca a imagem em cima no celular */
+        order: -1; 
     }
     .btn-exp-premium {
         justify-content: center;

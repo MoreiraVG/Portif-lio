@@ -11,20 +11,22 @@
 <body>
 
     <header class="topo">
-    <a href="#" class="logo-link">
-        <img src="img/logovg.png" alt="Logo VG" class="logo-img">
-    </a>
+        <a href="#" class="logo-link">
+            <img src="img/logovg.png" alt="Logo VG" class="logo-img">
+        </a>
 
-    <nav class="menu">
-        <ul>
-            <li><a href="#sobre">Sobre mim</a></li>
-            <li><a href="#tecnico">Formação Técnica</a></li>
-            <li><a href="#materias">Matérias</a></li>
-            <li><a href="#projetos">Projetos</a></li>
-            <li><a href="#contato">Contato</a></li>
-        </ul>
-    </nav>
-</header>
+        <nav class="menu">
+            <ul>
+                <li><a href="#sobre">Sobre mim</a></li>
+                <li><a href="#tecnico">Formação Técnica</a></li>
+                <li><a href="#materias">Matérias</a></li>
+                <li><a href="#projetos">Projetos</a></li>
+                <li><a href="#contato">Contato</a></li>
+            </ul>
+        </nav>
+        
+        <div class="scroll-progress"></div>
+    </header>
 
     <main>
         <section class="banner">
@@ -243,6 +245,7 @@
                 </div>
             </div>
         </section>
+        
         <section class="secao-experiencias" id="experiencias">
             <div class="exp-wrapper">
 
@@ -365,6 +368,14 @@
 
         sr.reveal('.animar-texto, .reveal-element', { origin: 'left', interval: 150 });
         sr.reveal('.animar-card, .tilt-card', { origin: 'bottom', interval: 200 }); 
+        
+        // BARRA DE PROGRESSO DE SCROLL
+        window.addEventListener('scroll', () => {
+            const scrollPx = document.documentElement.scrollTop;
+            const winHeightPx = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            const scrolled = (scrollPx / winHeightPx) * 100;
+            document.querySelector('.scroll-progress').style.width = scrolled + '%';
+        });
     </script>
 </body>
 
