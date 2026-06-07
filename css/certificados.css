@@ -63,19 +63,19 @@ body {
 .subtitle { color: #888; font-size: 1.1rem; max-width: 600px; }
 
 /* ============================================================
-   NOVIDADE: A GRADE MASONRY (SOLUÇÃO PARA NÃO ESTICAR)
+   A GRADE MASONRY 
 ============================================================ */
 .cert-grid {
-    /* Mudamos de display: grid para usar CSS Columns (Masonry) */
     display: block;
-    column-count: 3; /* Número de colunas no desktop */
-    column-gap: 30px; /* Espaçamento horizontal */
+    column-count: 2; /* <-- MUDAMOS DE 3 PARA 2 COLUNAS AQUI */
+    column-gap: 40px; /* Aumentei um pouco o espaço entre eles para respirar melhor */
     width: 100%;
 }
 
-/* Ajuste de colunas para telas médias (Tablets, Notebooks pequenos) */
-@media (max-width: 1100px) {
-    .cert-grid { column-count: 2; }
+/* Quando a tela for menor (tablets e celulares), vira 1 coluna só */
+@media (max-width: 900px) {
+    .cert-grid { column-count: 1; column-gap: 0; }
+    .glitch-title { font-size: 2.2rem; }
 }
 
 /* Ajuste para celulares (uma coluna só) */
