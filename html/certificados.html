@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfólio | Galeria de Certificados</title>
+    <link rel="icon" type="image/png" href="../img/logovg.png">
+    <link rel="stylesheet" href="../css/certificados.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+    <div class="cursor-personalizado"></div>
+    <div class="cursor-follower"></div>
+
+    <div class="bg-animated"></div>
+
+    <header class="top-nav">
+        <a href="../index.html" class="btn-back hover-target">
+            <span class="arrow">←</span> Voltar ao Portfólio
+        </a>
+    </header>
+
+    <main class="main-wrapper">
+        <header class="page-header">
+            <h1 class="glitch-title animar-texto" data-text="Certificações">Certificações</h1>
+            <p class="subtitle animar-texto">Galeria visual das minhas conquistas, especializações e conhecimentos validados.</p>
+        </header>
+
+        <section class="cert-grid">
+            
+            <article class="cert-card animar-card tilt-card" data-tilt data-tilt-max="8" data-tilt-glare="true" data-tilt-max-glare="0.15">
+                <div class="cert-neon-glow"></div>
+                <div class="cert-frame">
+                    <img src="/img/certificado-conexa.png" alt="Certificado Desenvolvimento Web" class="cert-img">
+                    
+                    <div class="cert-overlay">
+                        <span class="cert-badge">2026</span>
+                        <div class="cert-info">
+                            <h3>Participação conexa</h3>
+                            <p>Evento empresarial ACIF</p>
+                        </div>
+                        <a href="/img/certificado-conexa.png" target="_blank" class="btn-zoom hover-target">
+                            <i class="fa-solid fa-magnifying-glass-plus"></i> Expandir
+                        </a>
+                    </div>
+                </div>
+            </article>
+
+            <article class="cert-card animar-card tilt-card" data-tilt data-tilt-max="8" data-tilt-glare="true" data-tilt-max-glare="0.15">
+                <div class="cert-neon-glow"></div>
+                <div class="cert-frame">
+                    <img src="/img/certificado-sebrae.png" alt="Certificado JavaScript Avançado" class="cert-img">
+                    
+                    <div class="cert-overlay">
+                        <span class="cert-badge">2024</span>
+                        <div class="cert-info">
+                            <h3>Inteligencia emocional</h3>
+                            <p>Curso Sebrae</p>
+                        </div>
+                        <a href="/img/certificado-sebrae.png" target="_blank" class="btn-zoom hover-target">
+                            <i class="fa-solid fa-magnifying-glass-plus"></i> Expandir
+                        </a>
+                    </div>
+                </div>
+            </article>
+
+            <article class="cert-card animar-card tilt-card" data-tilt data-tilt-max="8" data-tilt-glare="true" data-tilt-max-glare="0.15">
+                <div class="cert-neon-glow"></div>
+                <div class="cert-frame">
+                    <img src="/img/certificado-Vitória-Luz.png" alt="Certificado UI/UX Design" class="cert-img">
+                    
+                    <div class="cert-overlay">
+                        <span class="cert-badge">2023</span>
+                        <div class="cert-info">
+                            <h3>Python junior</h3>
+                            <p>Curso de Vitória Luz</p>
+                        </div>
+                        <a href="/img/certificado-Vitória-Luz.png" target="_blank" class="btn-zoom hover-target">
+                            <i class="fa-solid fa-magnifying-glass-plus"></i> Expandir
+                        </a>
+                    </div>
+                </div>
+            </article>
+
+            </section>
+    </main>
+
+    <script src="https://unpkg.com/scrollreveal"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.8.0/vanilla-tilt.min.js"></script>
+    <script>
+        // Animação de entrada (Scroll Reveal)
+        ScrollReveal().reveal('.animar-texto', { origin: 'top', distance: '30px', duration: 1000, delay: 200 });
+        ScrollReveal().reveal('.animar-card', { origin: 'bottom', distance: '50px', duration: 1000, interval: 150 });
+
+        // Cursor customizado inteligente
+        const cursor = document.querySelector('.cursor-personalizado');
+        const follower = document.querySelector('.cursor-follower');
+
+        document.addEventListener('mousemove', (e) => {
+            cursor.style.left = e.clientX + 'px';
+            cursor.style.top = e.clientY + 'px';
+            
+            setTimeout(() => {
+                follower.style.left = e.clientX + 'px';
+                follower.style.top = e.clientY + 'px';
+            }, 50);
+        });
+
+        // Adiciona efeito de hover para qualquer link ou botão de expandir
+        document.body.addEventListener('mouseenter', (e) => {
+            if (e.target.matches && (e.target.matches('.hover-target') || e.target.matches('a'))) {
+                cursor.style.transform = 'translate(-50%, -50%) scale(1.5)';
+                follower.style.transform = 'translate(-50%, -50%) scale(1.5)';
+                follower.style.borderColor = '#ff3c6f';
+            }
+        }, true);
+
+        document.body.addEventListener('mouseleave', (e) => {
+            if (e.target.matches && (e.target.matches('.hover-target') || e.target.matches('a'))) {
+                cursor.style.transform = 'translate(-50%, -50%) scale(1)';
+                follower.style.transform = 'translate(-50%, -50%) scale(1)';
+                follower.style.borderColor = '#df0139';
+            }
+        }, true);
+    </script>
+</body>
+
+</html>

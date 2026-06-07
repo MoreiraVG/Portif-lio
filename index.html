@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfólio VG</title>
+    <link rel="icon" type="image/png" href="img/logovg.png">
     <link rel="stylesheet" href="css/style.css">
 </head>
 
@@ -19,12 +20,13 @@
             <ul>
                 <li><a href="#sobre">Sobre mim</a></li>
                 <li><a href="#tecnico">Formação Técnica</a></li>
+                <li><a href="#certificados">Certificados</a></li>
                 <li><a href="#materias">Matérias</a></li>
                 <li><a href="#projetos">Projetos</a></li>
                 <li><a href="#contato">Contato</a></li>
             </ul>
         </nav>
-        
+
         <div class="scroll-progress"></div>
     </header>
 
@@ -58,7 +60,7 @@
                 </p>
 
                 <div class="botoes">
-                    <a href="Currículo.pdf" target="_blank" class="btn-curriculo">📄 Baixar Currículo</a>
+                    <a href="Currículo-VG.pdf" target="_blank" class="btn-curriculo">📄 Baixar Currículo</a>
                     <a href="https://www.linkedin.com/in/vitor-guilherme-moreira-correa/" target="_blank"
                         class="btn-linkedin">LinkedIn</a>
                     <a href="https://github.com/MoreiraVG" target="_blank" class="btn-github">GitHub</a>
@@ -119,6 +121,50 @@
                 <p>Um dos meus principais hobbies é grafitar, desenhar e expressar minhas ideias através da arte.
                     Praias, rolês e estar com amigos fazem parte da minha rotina ideal.</p>
                 <a href="#" class="btn-card">Saiba mais</a>
+            </div>
+        </section>
+
+        <section class="secao-certificados-pro" id="certificados">
+            <div class="cert-glow-bg"></div>
+            
+            <div class="cert-container">
+                <div class="cert-conteudo animar-texto">
+                    <div class="cert-tag">Reconhecimento</div>
+                    <h2 class="titulo-cert">Minhas <span class="destaque-vermelho">Conquistas</span></h2>
+                    <p class="desc-cert">
+                        Muito além de linhas de código. Explore a galeria de certificados, participações em eventos e prêmios que impulsionam minha evolução e validam meu conhecimento na área da tecnologia.
+                    </p>
+                    
+                    <div class="cert-stats">
+                        <div class="stat-item">
+                            <strong>+3</strong>
+                            <span>Certificações</span>
+                        </div>
+                        <div class="stat-item">
+                            <strong>🏆</strong>
+                            <span>Premiações</span>
+                        </div>
+                    </div>
+
+                    <a href="html/certificados.html" class="btn-cyber">
+                        <span class="btn-text">Acessar</span>
+                        <span class="btn-icon">↗</span>
+                    </a>
+                </div>
+
+                <div class="cert-visual animar-card">
+                    <div class="floating-cert cert-back tilt-card" data-tilt data-tilt-max="15">
+                        <div class="cert-line"></div>
+                        <div class="cert-line short"></div>
+                        <div class="cert-seal"></div>
+                    </div>
+                    <div class="floating-cert cert-front tilt-card" data-tilt data-tilt-max="20">
+                        <div class="cert-header">CERTIFICADO</div>
+                        <div class="cert-line"></div>
+                        <div class="cert-line medium"></div>
+                        <div class="cert-seal solid"></div>
+                    </div>
+                </div>
             </div>
         </section>
 
@@ -245,7 +291,7 @@
                 </div>
             </div>
         </section>
-        
+
         <section class="secao-experiencias" id="experiencias">
             <div class="exp-wrapper">
 
@@ -367,8 +413,8 @@
         });
 
         sr.reveal('.animar-texto, .reveal-element', { origin: 'left', interval: 150 });
-        sr.reveal('.animar-card, .tilt-card', { origin: 'bottom', interval: 200 }); 
-        
+        sr.reveal('.animar-card, .tilt-card', { origin: 'bottom', interval: 200 });
+
         // BARRA DE PROGRESSO DE SCROLL
         window.addEventListener('scroll', () => {
             const scrollPx = document.documentElement.scrollTop;
