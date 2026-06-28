@@ -1462,6 +1462,42 @@ footer {
     transform: translateY(-6px);
 }
 
+/* ========================================= */
+/* ESTILOS DO NOVO FORMULÁRIO DE CONTACTO    */
+/* ========================================= */
+
+.form-contato {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.form-contato input,
+.form-contato textarea {
+    width: 100%;
+    padding: 15px;
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(223, 1, 57, 0.3);
+    color: #e2e2e2;
+    font-size: 1rem;
+    font-family: inherit;
+    transition: 0.3s;
+}
+
+.form-contato input:focus,
+.form-contato textarea:focus {
+    outline: none;
+    border-color: #df0139;
+    box-shadow: 0 0 10px rgba(223, 1, 57, 0.2);
+}
+
+.form-contato button {
+    cursor: pointer;
+    border: none;
+}
+
 @media (max-width: 950px) {
     .exp-wrapper {
         flex-direction: column;
@@ -1475,3 +1511,4 @@ footer {
         justify-content: center;
     }
 }
+
