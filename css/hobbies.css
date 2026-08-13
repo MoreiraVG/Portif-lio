@@ -1,0 +1,48 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+    cursor: none; /* Esconde o cursor padrão do sistema */
+}
+
+body {
+    background-color: #000000; 
+    color: white;
+    padding: 50px 20px;
+    overflow-x: hidden;
+}
+
+/* =========================================
+   BOTÃO DE VOLTAR NO TOPO
+========================================= */
+.top-nav {
+    padding: 0 0 40px 0;
+    position: relative;
+    z-index: 100;
+    text-align: left;
+    max-width: 1300px;
+    margin: 0 auto;
+}
+
+.btn-back {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    text-decoration: none;
+    color: #df0139;
+    font-weight: 700;
+    font-size: 0.95rem;
+    text-transform: uppercase;
+    padding: 10px 22px;
+    border: 1px solid rgba(223, 1, 57, 0.4);
+    border-radius: 50px;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.btn-back:hover {
+    background-color: #df0139;
+    color: white;
+    box-shadow: 0 0 20px rgba(223, 1, 57, 0.5);
+    transform: translateX(-5px);
+}

@@ -1,0 +1,225 @@
+/* ============================================================
+   css/certificados.css - VERSÃO CORRIGIDA (LAYOUT MASONRY)
+   Mantém a identidade visual, mas ajusta dinamicamente a altura
+============================================================ */
+
+:root {
+    --primary: #df0139;
+    --primary-glow: rgba(223, 1, 57, 0.5);
+    --bg-dark: #030408;
+    --glass: rgba(15, 18, 30, 0.7);
+    --border: rgba(255, 255, 255, 0.08);
+}
+
+* { 
+    margin: 0; 
+    padding: 0; 
+    box-sizing: border-box; 
+    cursor: none !important; /* Desativa o mouse nativo para usar o personalizado */
+}
+
+body {
+    background-color: var(--bg-dark);
+    color: #fff;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    overflow-x: hidden;
+}
+
+/* Fundo Espacial Estilizado */
+.bg-animated {
+    position: fixed;
+    inset: 0;
+    background: radial-gradient(circle at 50% 50%, #17040e 0%, #030408 100%);
+    z-index: -1;
+}
+
+/* Cursores Cyberpunk */
+.cursor-personalizado {
+    position: fixed; width: 8px; height: 8px; background: var(--primary); border-radius: 50%;
+    pointer-events: none; z-index: 10000; transform: translate(-50%, -50%); transition: transform 0.2s;
+}
+.cursor-follower {
+    position: fixed; width: 35px; height: 35px; border: 1px solid var(--primary); border-radius: 50%;
+    pointer-events: none; z-index: 9999; transform: translate(-50%, -50%); transition: transform 0.2s, border-color 0.2s;
+}
+
+/* Top Nav (Botão Voltar) */
+.top-nav { padding: 40px 5%; }
+
+.btn-back {
+    text-decoration: none; color: #fff; font-weight: bold; font-size: 0.9rem;
+    border: 1px solid var(--border); padding: 12px 28px; letter-spacing: 1px;
+    border-radius: 40px; background: var(--glass); transition: 0.3s ease;
+    display: inline-block; text-transform: uppercase;
+}
+.btn-back:hover { border-color: var(--primary); box-shadow: 0 0 25px var(--primary-glow); }
+.btn-back .arrow { margin-right: 8px; transition: 0.3s; display: inline-block; }
+.btn-back:hover .arrow { transform: translateX(-4px); }
+
+/* Layout Geral */
+.main-wrapper { max-width: 1400px; margin: 0 auto; padding: 20px 5% 100px; }
+.page-header { margin-bottom: 50px; border-left: 3px solid var(--primary); padding-left: 20px; }
+.glitch-title { font-size: 3rem; text-transform: uppercase; letter-spacing: 3px; margin-bottom: 8px; font-weight: 800; }
+.subtitle { color: #888; font-size: 1.1rem; max-width: 600px; }
+
+/* ============================================================
+   A GRADE MASONRY 
+============================================================ */
+.cert-grid {
+    display: block;
+    column-count: 2; /* <-- MUDAMOS DE 3 PARA 2 COLUNAS AQUI */
+    column-gap: 40px; /* Aumentei um pouco o espaço entre eles para respirar melhor */
+    width: 100%;
+}
+
+/* Quando a tela for menor (tablets e celulares), vira 1 coluna só */
+@media (max-width: 900px) {
+    .cert-grid { column-count: 1; column-gap: 0; }
+    .glitch-title { font-size: 2.2rem; }
+}
+
+/* Ajuste para celulares (uma coluna só) */
+@media (max-width: 768px) {
+    .cert-grid { column-count: 1; column-gap: 0; }
+    .glitch-title { font-size: 2.2rem; }
+}
+
+/* Container do Cartão - Adaptado para Masonry */
+.cert-card {
+    display: inline-block; /* Crucial para o funcionamento das colunas */
+    width: 100%; /* O cartão ocupa a largura total da coluna */
+    margin-bottom: 30px; /* Espaçamento vertical entre os cartões */
+    position: relative;
+    border-radius: 16px;
+    background: rgba(0, 0, 0, 0.4);
+    transform-style: preserve-3d;
+    transition: transform 0.4s ease;
+    /* height: 250px; <-- REMOVEMOS A ALTURA FIXA QUE ESTICAVA A FOTO */
+}
+
+/* Brilho neon oculto atrás da foto */
+.cert-neon-glow {
+    position: absolute;
+    inset: 10px;
+    background: var(--primary);
+    filter: blur(35px);
+    opacity: 0;
+    transition: opacity 0.5s ease;
+    border-radius: 16px;
+    z-index: 0;
+}
+
+.cert-card:hover .cert-neon-glow {
+    opacity: 0.4;
+}
+
+/* Moldura Protetora do Certificado */
+.cert-frame {
+    position: relative; /* Mudamos de absolute para relative para respeitar a altura da imagem */
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    overflow: hidden;
+    backdrop-filter: blur(5px);
+    z-index: 2;
+    transform: translateZ(20px); /* Relevo 3D do Vanilla-Tilt */
+    transition: border-color 0.3s ease;
+    display: block; /* Garante que o frame ocupe o espaço */
+}
+
+.cert-card:hover .cert-frame {
+    border-color: rgba(223, 1, 57, 0.5);
+}
+
+/* Configuração da Imagem - CORRIGIDO */
+.cert-img {
+    width: 100%;
+    height: auto; /* Mantém a proporção original da imagem, impedindo que estique */
+    display: block; /* Remove espaços em branco indesejados embaixo da foto */
+    transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.cert-card:hover .cert-img {
+    transform: scale(1.08); /* Zoom sutil sem distorcer */
+}
+
+/* Painel de informações em Glassmorphism */
+.cert-overlay {
+    position: absolute;
+    inset: 0;
+    /* Gradiente ajustado para cobrir a parte inferior de forma suave */
+    background: linear-gradient(to top, rgba(3, 4, 8, 0.98) 0%, rgba(3, 4, 8, 0.8) 50%, rgba(3, 4, 8, 0) 100%);
+    padding: 25px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-start;
+    opacity: 0;
+    transform: translateY(15px);
+    transition: opacity 0.4s ease, transform 0.4s ease;
+    z-index: 3;
+}
+
+.cert-card:hover .cert-overlay {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Badge de Ano */
+.cert-badge {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: rgba(223, 1, 57, 0.15);
+    border: 1px solid var(--primary);
+    color: #fff;
+    padding: 4px 12px;
+    font-size: 0.75rem;
+    font-weight: bold;
+    border-radius: 20px;
+    letter-spacing: 1px;
+    z-index: 4;
+}
+
+/* Textos dentro da Imagem */
+.cert-info h3 {
+    font-size: 1.2rem;
+    color: #fff;
+    margin-bottom: 5px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    line-height: 1.3;
+}
+
+.cert-info p {
+    color: #df0139;
+    font-size: 0.9rem;
+    font-weight: 600;
+    margin-bottom: 18px;
+}
+
+/* Botão de abrir em tamanho real */
+.btn-zoom {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    text-decoration: none;
+    color: #fff;
+    font-size: 0.8rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    background: var(--primary);
+    padding: 10px 20px;
+    border-radius: 30px;
+    box-shadow: 0 5px 15px rgba(223, 1, 57, 0.3);
+    transition: 0.3s ease;
+}
+
+.btn-zoom i {
+    font-size: 0.9rem;
+}
+
+.btn-zoom:hover {
+    background: #ff3c6f;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(223, 1, 57, 0.5);
+}

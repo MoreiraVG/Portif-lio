@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>O Que Está No Fone - Vitor Guilherme</title>
+    <link rel="icon" type="image/png" href="../img/logovg.png">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <link rel="stylesheet" href="../css/musica.css">
+</head>
+
+<body>
+
+    <header class="top-nav">
+        <a href="../index.html" class="btn-back hover-target">
+            <span class="arrow">←</span> Voltar ao Portfólio
+        </a>
+    </header>
+
+    <main class="spotify-container">
+        
+        <header class="header-musica">
+            <span class="mini-titulo-vermelho">Artistas Favoritos</span>
+            <h1 class="spotify-titulo">O Que Está No Fone</h1>
+        </header>
+
+        <section class="spotify-grid">
+
+            <div class="spotify-card card-favorito hover-target">
+                <img src="../img/alee_img.png" alt="Artista Alee">
+                <div class="card-content">
+                    <h3>ALEE</h3>
+                    <p>Trap / Melodic</p>
+                    <span class="badget-musica">Música do S2: Big Money / Estresse</span>
+                </div>
+            </div>
+
+            <div class="spotify-card hover-target">
+                <img src="../img/veigh_img.png" alt="Artista Veigh">
+                <div class="card-content">
+                    <h3>VEIGH</h3>
+                    <p>Trap / Lifestyle</p>
+                    <span class="badget-musica">Mais ouvida: Novo Balanço</span>
+                </div>
+            </div>
+
+            <div class="spotify-card hover-target">
+                <img src="../img/bacu_img.png" alt="Artista Baco Exu do Blues">
+                <div class="card-content">
+                    <h3>BACO EXU DO BLUES</h3>
+                    <p>MPB / Rap / Blues</p>
+                    <span class="badget-musica">Favorita: Hotel Caro</span>
+                </div>
+            </div>
+
+            <div class="spotify-card hover-target">
+                <img src="../img/ryu_img.png" alt="Artista Ryu the Runner">
+                <div class="card-content">
+                    <h3>RYU THE RUNNER</h3>
+                    <p>Trap / Plug</p>
+                    <span class="badget-musica">Vibe: Mantém o Pique</span>
+                </div>
+            </div>
+
+        </section>
+
+        <section class="about-music">
+            <div class="music-text">
+                <h3>A Trilha Sonora da Minha Vida</h3>
+                <p>A música sempre foi muito mais do que apenas som para mim; ela é uma ferramenta de foco, inspiração e expressão. Seja na hora de programar um código complexo, desenhar uma interface ou nos momentos de descontração com amigos, é o grave do Trap nacional e as melodias do Blues que ditam o ritmo do meu dia.</p>
+                <p>Acredito que a playlist de uma pessoa diz muito sobre a sua essência. A minha reflete uma busca constante por evolução, energia e autenticidade. O fone de ouvido é o meu passaporte para a concentração total.</p>
+            </div>
+            
+            <div class="spotify-link-box hover-target">
+                <i class="fab fa-spotify spotify-icon"></i>
+                <h4>Minha Playlist</h4>
+                <p>Quer saber o que mais rola no meu fone? Dá um play e curte a vibe junto comigo.</p>
+                <a href="COLOQUE_SEU_LINK_DO_SPOTIFY_AQUI" target="_blank" class="btn-spotify hover-target">Acessar meu Spotify</a>
+            </div>
+        </section>
+
+    </main>
+
+    <div class="cursor-personalizado"></div>
+    <div class="cursor-follower"></div>
+
+    <script>
+        const cursor = document.querySelector('.cursor-personalizado');
+        const follower = document.querySelector('.cursor-follower');
+        const hoverTargets = document.querySelectorAll('.hover-target');
+
+        document.addEventListener('mousemove', (e) => {
+            cursor.style.left = e.clientX + 'px';
+            cursor.style.top = e.clientY + 'px';
+
+            setTimeout(() => {
+                follower.style.left = e.clientX + 'px';
+                follower.style.top = e.clientY + 'px';
+            }, 80);
+        });
+
+        hoverTargets.forEach(target => {
+            target.addEventListener('mouseenter', () => {
+                cursor.classList.add('cursor-hover');
+                follower.classList.add('follower-hover');
+            });
+            target.addEventListener('mouseleave', () => {
+                cursor.classList.remove('cursor-hover');
+                follower.classList.remove('follower-hover');
+            });
+        });
+    </script>
+</body>
+</html>

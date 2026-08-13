@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfólio | Técnico</title>
+    <link rel="icon" type="image/png" href="../img/logovg.png">
+    <link rel="stylesheet" href="/css/tecnico.css">
+</head>
+
+<body>
+    <div class="bg-animated"></div>
+
+    <header class="top-nav">
+        <a href="../index.html" class="btn-back hover-target">
+            <span class="arrow">←</span> Voltar ao Início
+        </a>
+    </header>
+
+    <main class="container">
+        <header class="header-secao">
+            <h1 class="main-title animar-texto">Técnico</h1>
+            <p class="subtitle animar-texto">Explorações e reflexões do 1° Trimestre</p>
+        </header>
+
+        <section class="activities-grid">
+
+            <article class="activity-card animar-card" style="--animation-order: 2;">
+                <div class="card-image">
+                    <img src="/img/grandprix.img.png" alt="A Paixão de G.H">
+                    <div class="image-overlay"></div>
+                </div>
+                <div class="card-content">
+                    <div class="card-header">
+                        <h2>Grand prix</h2>
+                        <div class="tags-competencias">
+                            <span>H4</span><span>H22</span>
+                        </div>
+                    </div>
+
+                    <p class="description">
+                        Participamos do Grand Prix com o desafio de criar soluções inovadoras. Aplicamos nossos
+                        conhecimentos técnicos para facilitar o trabalho e integrar novas tecnologias ao ambiente.
+                    </p>
+
+                    <div class="reflexao">
+                        <h3>Reflexão Crítica</h3>
+                        <p>"A tecnologia só faz sentido quando serve às pessoas. Mais do que técnica, o foco deste
+                            projeto foi usar a inovação para simplificar processos e transformar a eficiência em um
+                            valor prático no dia a dia.."</p>
+                    </div>
+
+                    <div class="card-footer">
+                        <a href="https://docs.google.com/presentation/d/1LXQ-HIm5X-O32Pn53PUcMacIbhH999obLoxKB07pg-0/edit?usp=sharing"
+                            class="btn-action hover-target" target="_blank">Acessar Atividade</a>
+                    </div>
+                </div>
+            </article>
+
+        </section>
+    </main>
+
+    <div class="cursor-personalizado"></div>
+    <div class="cursor-follower"></div>
+
+    <script src="https://unpkg.com/scrollreveal"></script>
+
+    <script>
+        // Lógica avançada do cursor
+        const cursor = document.querySelector('.cursor-personalizado');
+        const follower = document.querySelector('.cursor-follower');
+        const hoverTargets = document.querySelectorAll('.hover-target');
+
+        document.addEventListener('mousemove', (e) => {
+            cursor.style.left = e.clientX + 'px';
+            cursor.style.top = e.clientY + 'px';
+
+            // Suavidade no follower
+            setTimeout(() => {
+                follower.style.left = e.clientX + 'px';
+                follower.style.top = e.clientY + 'px';
+            }, 80);
+        });
+
+        // Aumenta o cursor ao passar nos botões
+        hoverTargets.forEach(target => {
+            target.addEventListener('mouseenter', () => {
+                cursor.classList.add('cursor-hover');
+                follower.classList.add('follower-hover');
+            });
+            target.addEventListener('mouseleave', () => {
+                cursor.classList.remove('cursor-hover');
+                follower.classList.remove('follower-hover');
+            });
+        });
+
+        // SCROLL REVEAL (Animações de entrada)
+        const sr = ScrollReveal({
+            distance: '50px',
+            duration: 1000,
+            delay: 200,
+            reset: false // Deixe 'true' se quiser que a animação repita toda vez que subir e descer a página
+        });
+
+        // As animações que você já tinha:
+        sr.reveal('.reveal-element', { origin: 'top' });
+        sr.reveal('.tilt-card', { origin: 'bottom', interval: 200 });
+
+        // SUAS NOVAS ANIMAÇÕES:
+        // Anima os textos vindo da esquerda
+        sr.reveal('.animar-texto', { origin: 'left', distance: '60px', interval: 150 });
+
+        // Anima os cards vindo de baixo, um por um (efeito cascata)
+        sr.reveal('.animar-card', { origin: 'bottom', distance: '60px', interval: 200 });
+    </script>
+</body>
+
+</html>
