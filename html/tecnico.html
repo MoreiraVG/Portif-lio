@@ -20,54 +20,243 @@
 
     <main class="container">
         <header class="header-secao">
-            <h1 class="main-title animar-texto">Técnico</h1>
-            <p class="subtitle animar-texto">Explorações e reflexões do 1° Trimestre</p>
+            <h1 class="main-title animar-texto">Área Técnica</h1>
+            <p class="subtitle animar-texto">Selecione uma matéria e confira os projetos por trimestre</p>
         </header>
 
-        <section class="activities-grid">
+        <!-- MENU DE NAVEGAÇÃO POR MATÉRIAS (ABAS) -->
+        <nav class="subject-nav animar-texto">
+            <button class="tab-btn active hover-target" data-subject="banco-dados">
+                Banco de Dados / Dev
+            </button>
+            <button class="tab-btn hover-target" data-subject="oit">
+                OIT
+            </button>
+            <button class="tab-btn hover-target" data-subject="prog-apps">
+                Programação de Apps
+            </button>
+        </nav>
 
-            <article class="activity-card animar-card" style="--animation-order: 2;">
-                <div class="card-image">
-                    <img src="/img/grandprix.img.png" alt="A Paixão de G.H">
-                    <div class="image-overlay"></div>
+        <!-- ==========================================
+             MATÉRIA 1: BANCO DE DADOS E DESENVOLVIMENTO
+             ========================================== -->
+        <div id="banco-dados" class="subject-content active">
+
+            <!-- 1° Trimestre -->
+            <section class="trimester-group">
+                <div class="trimester-header">
+                    <h2>1° Trimestre</h2>
                 </div>
-                <div class="card-content">
-                    <div class="card-header">
-                        <h2>Grand prix</h2>
-                        <div class="tags-competencias">
-                            <span>H4</span><span>H22</span>
+                <div class="activities-grid">
+                    <article class="activity-card">
+                        <div class="card-image">
+                            <img src="/img/grandprix.img.png" alt="Atividade">
+                            <div class="image-overlay"></div>
                         </div>
-                    </div>
+                        <div class="card-content">
+                            <div class="card-header">
+                                <h2>Atividade de BD 1</h2>
+                                <div class="tags-competencias"><span>H4</span><span>H22</span></div>
+                            </div>
+                            <p class="description">Descrição da atividade de Banco de Dados do 1° Trimestre.</p>
+                            <div class="reflexao">
+                                <h3>Reflexão Crítica</h3>
+                                <p>"Minha reflexão sobre este projeto..."</p>
+                            </div>
+                            <div class="card-footer">
+                                <a href="#" class="btn-action hover-target" target="_blank">Acessar Atividade</a>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </section>
 
-                    <p class="description">
-                        Participamos do Grand Prix com o desafio de criar soluções inovadoras. Aplicamos nossos
-                        conhecimentos técnicos para facilitar o trabalho e integrar novas tecnologias ao ambiente.
-                    </p>
+            <!-- 2° Trimestre -->
+            <section class="trimester-group">
+                <div class="trimester-header">
+                    <h2>2° Trimestre</h2>
+                </div>
+                <div class="activities-grid">
+                    <!-- Adicione os cards do 2° trimestre de BD aqui -->
+                </div>
+            </section>
 
-                    <div class="reflexao">
-                        <h3>Reflexão Crítica</h3>
-                        <p>"A tecnologia só faz sentido quando serve às pessoas. Mais do que técnica, o foco deste
-                            projeto foi usar a inovação para simplificar processos e transformar a eficiência em um
-                            valor prático no dia a dia.."</p>
-                    </div>
+            <!-- 3° Trimestre -->
+            <section class="trimester-group">
+                <div class="trimester-header">
+                    <h2>3° Trimestre</h2>
+                </div>
+                <div class="activities-grid">
+                    <!-- Adicione os cards do 3° trimestre de BD aqui -->
+                </div>
+            </section>
 
-                    <div class="card-footer">
-                        <a href="https://docs.google.com/presentation/d/1LXQ-HIm5X-O32Pn53PUcMacIbhH999obLoxKB07pg-0/edit?usp=sharing"
-                            class="btn-action hover-target" target="_blank">Acessar Atividade</a>
+        </div>
+
+        <!-- ==========================================
+             MATÉRIA 2: OIT
+             ========================================== -->
+        <div id="oit" class="subject-content">
+
+            <!-- 1° Trimestre -->
+            <section class="trimester-group">
+                <div class="trimester-header">
+                    <h2>1° Trimestre</h2>
+                </div>
+
+            </section>
+
+            <!-- 2° Trimestre -->
+            <section class="trimester-group">
+                <div class="trimester-header">
+                    <h2>2° Trimestre</h2>
+                </div>
+                <div class="activities-grid">
+                    <div class="activities-grid">
+                        <article class="activity-card">
+                            <div class="card-image">
+                                <img src="/img/led.png" alt="Liga led">
+                                <div class="image-overlay"></div>
+                            </div>
+                            <div class="card-content">
+                                <div class="card-header">
+                                    <h2>Acender Led</h2>
+                                    <div class="tags-competencias">
+                                        <span>H01</span><span>H02</span><span>H03</span><span>H04</span><span>H05</span>
+                                    </div>
+                                </div>
+                                <p class="description">Montamos um circuito com Arduino, tanto de forma online quanto
+                                    física, utilizando um LED e um resistor. Programamos o Arduino para fazer o LED
+                                    piscar, alternando entre ligado e desligado.</p>
+                                <div class="reflexao">
+                                    <h3>Reflexão Crítica</h3>
+                                    <p>"Essa atividade me ajudou a entender melhor como funciona um circuito com Arduino
+                                        e como a programação pode ser usada para controlar componentes físicos, como um
+                                        LED."</p>
+                                </div>
+                                <div class="card-footer">
+                                    <a href="/img/led.png" class="btn-action hover-target" target="_blank">Acessar
+                                        Atividade</a>
+                                </div>
+                            </div>
+                        </article>
+
+                        <article class="activity-card">
+                            <div class="card-image">
+                                <img src="/img/botao-led.png" alt="Botão e led">
+                                <div class="image-overlay"></div>
+                            </div>
+                            <div class="card-content">
+                                <div class="card-header">
+                                    <h2>
+                                        Acender Led com Botão</h2>
+                                    <div class="tags-competencias">
+                                        <span>H01</span><span>H02</span><span>H03</span><span>H04</span><span>H05</span>
+                                    </div>
+                                </div>
+                                <p class="description">Aprendemos a utilizar um push button com Arduino, simulando um
+                                    circuito no Tinkercad para controlar um LED e entender como sinais físicos são
+                                    transformados em comandos digitais.</p>
+                                <div class="reflexao">
+                                    <h3>Reflexão Crítica</h3>
+                                    <p>"Essa atividade me ajudou a entender como um componente físico pode enviar
+                                        comandos para o Arduino e como a programação permite controlar o funcionamento
+                                        de um circuito."</p>
+                                </div>
+                                <div class="card-footer">
+                                    <a href="/img/botao-led.png" class="btn-action hover-target" target="_blank">Acessar
+                                        Atividade</a>
+                                </div>
+                            </div>
+                        </article>
+                        <article class="activity-card">
+                            <div class="card-image">
+                                <img src="/img/semafaro.png" alt="Grand Prix">
+                                <div class="image-overlay"></div>
+                            </div>
+                            <div class="card-content">
+                                <div class="card-header">
+                                    <h2>Semáforo
+                                    </h2>
+                                    <div class="tags-competencias">
+                                        <span>H01</span><span>H02</span><span>H03</span><span>H04</span><span>H05</span>
+                                    </div>
+                                </div>
+                                <p class="description">Nesta atividade, construímos um semáforo com Arduino UNO, utilizando LEDs, resistores, protoboard e jumpers. Programamos os componentes para funcionar em sequência, reproduzindo o ciclo de um semáforo real.
+                                </p>
+                                <div class="reflexao">
+                                    <h3>Reflexão Crítica</h3>
+                                    <p>"A atividade mostrou, de forma prática, como programação e eletrônica podem trabalhar juntas para automatizar um sistema simples."</p>
+                                </div>
+                                <div class="card-footer">
+                                    <a href="/img/semafaro.png" class="btn-action hover-target" target="_blank">Acessar
+                                        Atividade</a>
+                                </div>
+                            </div>
+                        </article>
                     </div>
                 </div>
-            </article>
+            </section>
 
-        </section>
+            <!-- 3° Trimestre -->
+            <section class="trimester-group">
+                <div class="trimester-header">
+                    <h2>3° Trimestre</h2>
+                </div>
+                <div class="activities-grid">
+                    <!-- Cards do 3° Trimestre de OIT -->
+                </div>
+            </section>
+
+        </div>
+
+        <!-- ==========================================
+             MATÉRIA 3: PROGRAMAÇÃO DE APLICATIVOS
+             ========================================== -->
+        <div id="prog-apps" class="subject-content">
+
+            <!-- 1° Trimestre -->
+            <section class="trimester-group">
+                <div class="trimester-header">
+                    <h2>1° Trimestre</h2>
+                </div>
+                <div class="activities-grid">
+                    <!-- Cards do 1° Trimestre de Prog. Apps -->
+                </div>
+            </section>
+
+            <!-- 2° Trimestre -->
+            <section class="trimester-group">
+                <div class="trimester-header">
+                    <h2>2° Trimestre</h2>
+                </div>
+                <div class="activities-grid">
+                    <!-- Cards do 2° Trimestre de Prog. Apps -->
+                </div>
+            </section>
+
+            <!-- 3° Trimestre -->
+            <section class="trimester-group">
+                <div class="trimester-header">
+                    <h2>3° Trimestre</h2>
+                </div>
+                <div class="activities-grid">
+                    <!-- Cards do 3° Trimestre de Prog. Apps -->
+                </div>
+            </section>
+
+        </div>
+
     </main>
 
+    <!-- Cursor Personalizado -->
     <div class="cursor-personalizado"></div>
     <div class="cursor-follower"></div>
 
+    <!-- Scripts -->
     <script src="https://unpkg.com/scrollreveal"></script>
-
     <script>
-        // Lógica avançada do cursor
+        // Lógica do Cursor Personalizado
         const cursor = document.querySelector('.cursor-personalizado');
         const follower = document.querySelector('.cursor-follower');
         const hoverTargets = document.querySelectorAll('.hover-target');
@@ -76,14 +265,12 @@
             cursor.style.left = e.clientX + 'px';
             cursor.style.top = e.clientY + 'px';
 
-            // Suavidade no follower
             setTimeout(() => {
                 follower.style.left = e.clientX + 'px';
                 follower.style.top = e.clientY + 'px';
             }, 80);
         });
 
-        // Aumenta o cursor ao passar nos botões
         hoverTargets.forEach(target => {
             target.addEventListener('mouseenter', () => {
                 cursor.classList.add('cursor-hover');
@@ -95,24 +282,30 @@
             });
         });
 
-        // SCROLL REVEAL (Animações de entrada)
+        // TROCA DE ABAS (MATÉRIAS)
+        const tabBtns = document.querySelectorAll('.tab-btn');
+        const subjectContents = document.querySelectorAll('.subject-content');
+
+        tabBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                tabBtns.forEach(b => b.classList.remove('active'));
+                subjectContents.forEach(c => c.classList.remove('active'));
+
+                btn.classList.add('active');
+                const targetId = btn.getAttribute('data-subject');
+                document.getElementById(targetId).classList.add('active');
+            });
+        });
+
+        // ScrollReveal
         const sr = ScrollReveal({
             distance: '50px',
             duration: 1000,
             delay: 200,
-            reset: false // Deixe 'true' se quiser que a animação repita toda vez que subir e descer a página
+            reset: false
         });
 
-        // As animações que você já tinha:
-        sr.reveal('.reveal-element', { origin: 'top' });
-        sr.reveal('.tilt-card', { origin: 'bottom', interval: 200 });
-
-        // SUAS NOVAS ANIMAÇÕES:
-        // Anima os textos vindo da esquerda
         sr.reveal('.animar-texto', { origin: 'left', distance: '60px', interval: 150 });
-
-        // Anima os cards vindo de baixo, um por um (efeito cascata)
-        sr.reveal('.animar-card', { origin: 'bottom', distance: '60px', interval: 200 });
     </script>
 </body>
 
